@@ -1,0 +1,61 @@
+preg_replace_callback after. Template: &lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+    &lt;head&gt;
+
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.accessibyte.com/online/bootstrap/css/bootstrap.min.css&quot;&gt;
+
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.accessibyte.com/online/dist/css/AdminLTE.min.css&quot;&gt;
+
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.accessibyte.com/online/dist/css/skins/_all-skins.min.css&quot;&gt;
+
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.accessibyte.com/online/bootstrap/css/style.css&quot;&gt;
+
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.accessibyte.com/online/dist/css/custom.css&quot;&gt;        &lt;!-- iCheck --&gt;
+
+        &lt;style&gt;
+
+            .help-block-error{ color:#a94442; }
+
+            .login-header {
+
+                background: none repeat scroll 0 0 #fff;
+
+                border-top-left-radius: 4px;
+
+                border-top-right-radius: 4px;
+
+                padding: 1px 1px;
+
+            }
+
+        &lt;/style&gt;
+
+    &lt;/head&gt;
+
+    &lt;body&gt;
+
+        &lt;div class=&quot;container&quot;&gt;
+
+            &lt;p&gt;
+
+                Hello Aakash Santra,
+
+             &lt;/p&gt;
+
+             &lt;p&gt;
+
+                Thanks for registering with Accessibyte Online! Please keep this email for future reference.&lt;br/&gt;
+                
+                Your username is: Skyyy&lt;br/&gt;
+                
+                Your license is : TYO-HVKP-FXSI-XAKR-BOYK&lt;br/&gt;
+
+             &lt;/p&gt;
+
+        &lt;/div&gt;
+
+    &lt;/body&gt;
+
+&lt;/html&gt;

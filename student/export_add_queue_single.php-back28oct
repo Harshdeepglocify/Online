@@ -1,0 +1,109 @@
+<?php 
+include "../config/config.php";
+
+// Values
+$user_id    = $_SESSION['User']['id'];
+$user_email = $_SESSION['User']['email'];
+$status     = "pending";
+$teacher_data = !empty($_SESSION['User']) ? $_SESSION['User']['teacher'] : '';	
+
+
+$check = "SELECT id FROM export_queue WHERE user_id = '$user_id' AND status = 'pending' AND csv_type = 'student_export' AND is_single = '$teacher_data' LIMIT 1";
+$result = mysqli_query($con, $check);
+
+$report_type  = 'student_export' ;
+$report_type1  = 'student_export_teacher' ;
+		sort($student_ids);
+		$request_data = $report_type1 . ":" . $user_id;
+		$report_hash = hash('sha256', $request_data);
+
+$sql = "SELECT request_count 
+        FROM report_requests 
+        WHERE teacher_id = '$user_id' 
+        AND report_hash = '$report_hash' AND 
+		csv_type = '$report_type' AND
+		is_single = '$teacher_data' ";
+		
+		$res = mysqli_query($con, $sql);
+		
+		$request_count = 0; 
+		
+		if ($res && mysqli_num_rows($res) > 0) {
+			$row = mysqli_fetch_assoc($res);
+			$request_count = (int)$row['request_count'];
+		}
+		
+		
+		if( $request_count != 5  || $request_count != '5' ){
+			
+		if (mysqli_num_rows($result) > 0) {
+			// Already has a pending request
+			echo json_encode([
+				"Success" => "409",
+				"msg" => "You already submitted a request, please wait."
+			]);
+		} else {
+    // Insert new request
+    
+			  
+	if($request_count == 0 || $request_count == "0" || $request_count == "" || $request_count == null){
+		$request = "INSERT INTO report_requests (teacher_id, report_hash, csv_type , request_count, is_single) 
+							VALUES ('$user_id', '$report_hash' ,'$report_type' , '1' , '$teacher_data' )";
+	}else{
+		$request = "UPDATE report_requests SET request_count = request_count + 1
+					   WHERE teacher_id = '$user_id' 
+					   AND report_hash = '$report_hash' 
+					   AND csv_type = '$report_type' 
+					   AND is_single = '$teacher_data' 
+					   ";
+				
+		}
+		//print_r($request);die();
+		$request_result = mysqli_query($con, $request);	
+	
+	$sql_downloads 	= "INSERT INTO report_downloads (user_id, user_email, file_status , report_hash, report_type, is_single,  created_at) 
+        VALUES ('$user_id', '$user_email', 'Processing' , 'Multiple' , '$report_type' , '$teacher_data' , NOW())";
+	
+	$request_downloads = mysqli_query($con, $sql_downloads);	
+	
+	if($request_downloads){
+	$inserted_id 	= mysqli_insert_id($con); 
+	}
+	
+	$query = "INSERT INTO export_queue (user_id, user_email, status , csv_type , dwn_lnk_id , is_single) 
+              VALUES ('$user_id', '$user_email', '$status' ,'$report_type' ,'$inserted_id' , '$teacher_data' )";
+    $query_result = mysqli_query($con, $query);
+
+    if ($query_result) {
+        echo json_encode([
+            "Success" => "200",
+            "msg" => "We’ll email you the Student List CSV when it’s ready."
+        ]);
+    } else {
+        echo json_encode([
+            "Success" => "500",
+            "msg" => "Database error: " . mysqli_error($con)
+        ]);
+    }
+}
+		}else{
+			echo json_encode([
+				"Success" => "409",
+				"msg" => "The same CSV was requested recently. Kindly wait before making another request."
+			]);
+		}
+
+/*
+if ($query_result) {
+	$result =  array("Success"=>"200","msg"=>"We’ll email you the report when it’s ready.");
+	echo json_encode($result);
+    //echo "Job added. ID: " . mysqli_insert_id($con);
+} else {
+	$result =  array("Error"=>"400","msg"=>"Error in report. Please try again");
+	echo json_encode($result);
+   // echo "Error: " . mysqli_error($con);
+}
+*/
+exit;
+
+?>

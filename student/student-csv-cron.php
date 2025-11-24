@@ -1,0 +1,338 @@
+<?php 
+$HostName = "localhost";
+$DbUser = "devaccessibyte_copyuser";
+$DbPassword = "P?fpg2fZL~G-";
+$Database = "devaccessibyte_onlinec";
+//header('Content-Type: text/csv; charset=utf-8');
+//header('Content-Disposition: attachment; filename=Accessibyte_Student_List_' . time() . '.csv');
+$con = mysqli_connect($HostName, $DbUser, $DbPassword, $Database);
+
+if (!$con) {
+ 
+}else{
+	function get_users($arg) {
+	global $con;
+   
+
+    $user_data = $query_val = array();
+
+    //Set Table Name
+    $table = "user";
+
+    //Get data based on teacher code
+    if (!empty($arg['teacher_code'])) {
+        $query_val[] = " `teacher`='" . $arg['teacher_code'] . "'";
+    }
+
+    //Get data based on role
+    if (!empty($arg['role'])) {
+        $query_val[] = " `role`='" . $arg['role'] . "'";
+    }
+
+    //Get data based on role
+    if (!empty($arg['username'])) {
+        $query_val[] = " `username`='" . $arg['username'] . "'";
+    }
+
+    //Get data based on user id
+    if (!empty($arg['user_id'])) {
+        $query_val[] = " `id`='" . $arg['user_id'] . "'";
+    }
+
+    if (!empty($arg['license'])) {
+        $query_val[] = " `license`='" . $arg['license'] . "'";
+    }
+
+    if (!empty($query_val)) {
+        $where = ' WHERE ' . implode(' AND', $query_val);
+    }
+
+    //Build Query
+    $query = "SELECT * FROM `" . $table . "` $where ";
+
+
+
+    $user_data_rows = mysqli_query($con, $query);
+
+    while ($user_data_row = mysqli_fetch_assoc($user_data_rows)) {
+
+        $user_data[] = $user_data_row;
+    }
+	//print_r($user_data);die();
+    return $user_data;
+	}
+	function getTimtstampDiff($timestamp) {
+
+    $now = time();
+    $datediff = $now - $timestamp;
+    $time_ago = floor($datediff / (60 * 60 * 24));
+
+    if ($time_ago == 0 || $time_ago < 0) {
+        $time_ago = 'Today';
+    } elseif ($time_ago == 1) {
+        $time_ago = 'Yesterday';
+    } elseif ($time_ago > 5) {
+        $time_ago = date('M d, Y', $timestamp);
+    } elseif ($time_ago < 5 && $time_ago > 1) {
+        $time_ago = $time_ago.' days ago';
+    }
+    return $time_ago;
+	}
+	$check = "SELECT user_id, user_email , dwn_lnk_id, is_single FROM export_queue 
+          WHERE status = 'pending' AND csv_type = 'student_export' LIMIT 100 " ;
+
+	$result = mysqli_query($con, $check);
+
+	$existing_user_id = [];
+	$existing_email   = [];
+
+	if ($result && mysqli_num_rows($result) > 0) {
+		while ($row = mysqli_fetch_assoc($result)) {
+        $existing_user_id[] = array("user" => $row['user_id'] , "email" => $row['user_email'] , 'download_id' => $row['dwn_lnk_id'], 'is_teacher' => $row['is_single']);
+        //$existing_email[]   = $row['user_email'];
+    }
+
+		$delimiter 	= ",";
+		// Define full folder path
+		$root = dirname(__DIR__, 1);
+		$csvFolder = $root."/uploads/reports";
+
+		// Create folder if it doesn’t exist
+		if ( ! file_exists( $csvFolder ) ) {
+			mkdir( $csvFolder, 0777, true );
+		}
+		$j = 0;
+		$unique = uniqid();
+		// ---------- File 1 (Teacher based) ----------
+		$filename_teacher = "Accessibyte_Student_List_" . $unique . ".csv";
+		$csvFile_teacher  = $csvFolder . "/" . $filename_teacher;
+		$f_teacher = fopen($csvFile_teacher, "w");
+		$fields = array('Display Name','Username','Teacher','School','Last Active');
+		fputcsv($f_teacher, $fields, $delimiter);
+
+		// ---------- File 2 (License based) ----------
+		$filename_license = "Accessibyte_Student_List__" . $unique .$j. ".csv";
+		$csvFile_license  = $csvFolder . "/" . $filename_license;
+		$f_license = fopen($csvFile_license, "w");
+		fputcsv($f_license, $fields, $delimiter);
+		
+	  
+	foreach($existing_user_id as $alldata){
+		
+		if((int)$alldata['is_teacher'] != 0 || $alldata['is_teacher'] != '0'){
+		$query = "SELECT * FROM user WHERE `role` ='student' AND `teacher` ='".$alldata['is_teacher']."' ORDER BY firstname ASC";
+		
+		$resultlusrs = mysqli_query($con, $query);
+		if ($resultlusrs && mysqli_num_rows($resultlusrs) > 0) {
+		while ($student_row = mysqli_fetch_assoc($resultlusrs)) {
+					
+			$firstname 		= ucfirst(base64_decode($student_row['firstname']));
+            $nickname 		= $firstname;
+            $username 		= base64_decode($student_row['username']);
+            $teacher_name 	= base64_decode($student_row['teacher_name']);
+            $organization 	= base64_decode($student_row['organization']);
+            $username 		= base64_decode($student_row['username']);
+
+            $args = array(
+                        //'teacher_code' => $teahcerid,
+                       'teacher_code' => $student_row['teacher'],
+                        'role' => 'teacher',
+             );
+			
+              $teacher_data = get_users($args);
+			  
+               if(!empty($teacher_data)){
+                 $teacher_name = isset($teacher_data[0]['username']) ? base64_decode($teacher_data[0]['username']) : '';
+                    }
+                    $email = isset( $student_row['email'] )?base64_decode( $student_row['email'] ): "";
+                    $license =$student_row['license'];
+
+                    $activity = !empty($student_row['login']) ? getTimtstampDiff($student_row['login']):"";
+
+		            $fields_value = array($nickname, $username,$teacher_name, $organization,$activity);
+		            //fputcsv($f, $fields_value , $delimiter);
+					  fputcsv($f_teacher, $fields_value, $delimiter);
+					
+		}
+		
+		 
+		}
+		$download_link = "online/uploads/reports/" . $filename_teacher;  
+		}else{
+		$licenseda = "SELECT license FROM users_licenses WHERE user_id = '".$alldata['user']."'";
+		$resultlicense = mysqli_query($con, $licenseda);
+		$teacherid = "SELECT teacher,organization FROM user WHERE id = ".$alldata['user'];
+		$resultteacherid = mysqli_query($con, $teacherid);
+		while ($row = mysqli_fetch_assoc($resultteacherid)) { 
+		$teahcerid = $row['teacher'];
+		//$organization = $row['organization'];
+		}
+		//print_r($teahcerid);die();
+		if ($resultlicense && mysqli_num_rows($resultlicense) > 0) {
+		while ($row = mysqli_fetch_assoc($resultlicense)) {
+			$license = $row['license'];
+			//$existing_email[]   = $row['user_email'];
+		}
+		
+		$query = "SELECT * FROM user WHERE `role` ='student' AND`license` ='".$license."'  AND `is_admin` != '1' ORDER BY firstname ASC";
+		
+		$resultlusrs = mysqli_query($con, $query);
+		if ($resultlusrs && mysqli_num_rows($resultlusrs) > 0) {
+		while ($student_row = mysqli_fetch_assoc($resultlusrs)) {
+					
+			$firstname 		= ucfirst(base64_decode($student_row['firstname']));
+            $nickname 		= $firstname;
+            $username 		= base64_decode($student_row['username']);
+            $teacher_name 	= base64_decode($student_row['teacher_name']);
+            $organization 	= base64_decode($student_row['organization']);
+            $username 		= base64_decode($student_row['username']);
+
+            $args = array(
+                        //'teacher_code' => $teahcerid,
+                        'teacher_code' => $student_row['teacher'],
+                        'role' => 'teacher',
+             );
+			
+              $teacher_data = get_users($args);
+			  
+               if(!empty($teacher_data)){
+                 $teacher_name = isset($teacher_data[0]['username']) ? base64_decode($teacher_data[0]['username']) : '';
+                    }
+                    $email = isset( $student_row['email'] )?base64_decode( $student_row['email'] ): "";
+                    $license =$student_row['license'];
+
+                    $activity = !empty($student_row['login']) ? getTimtstampDiff($student_row['login']):"";
+
+		            $fields_value = array($nickname, $username,$teacher_name, $organization,$activity);
+		           fputcsv($f_license, $fields_value , $delimiter);
+					
+		}		 
+		}
+		}
+		$download_link = "online/uploads/reports/" . $filename_license;  
+		}
+	
+       
+		//$teahcerid = '';
+		/*AND organization  = '".$organization."'*/
+		/*if($alldata['is_teacher'] == 0 || $alldata['is_teacher'] == '0'){
+		
+		}else{
+			
+		
+		}
+		*/
+		
+		
+	
+	
+	$createdate =  date("j M, Y");
+	
+	if((int)$alldata['is_teacher'] != 0 || $alldata['is_teacher'] != '0'){
+	
+			$update_sql = "UPDATE report_downloads 
+               SET download_link = '$download_link' ,
+                file_status = '$createdate',
+				created_at = NOW()
+               WHERE id = '".$alldata['download_id']."' AND is_single = '".$alldata['is_teacher']."' ";
+
+		}else{
+
+			$update_sql = "UPDATE report_downloads 
+               SET download_link = '$download_link' ,
+                file_status = '$createdate',
+				created_at = NOW()
+               WHERE id = '".$alldata['download_id']."' AND is_single = '0' ";
+
+		}
+
+if (mysqli_query($con, $update_sql)) {
+	
+	if((int)$alldata['is_teacher'] != 0 || $alldata['is_teacher'] != '0'){
+				$delete = "DELETE FROM export_queue WHERE user_id = '".$alldata['user']."' AND user_email = '".$alldata['email']."' AND csv_type = 'student_export' AND is_single = '".$alldata['is_teacher']."' ";
+			}else{
+			
+				$delete = "DELETE FROM export_queue WHERE user_id = '".$alldata['user']."' AND user_email = '".$alldata['email']."' AND csv_type = 'student_export' AND is_single = '0' ";
+				}
+			
+				mysqli_query($con, $delete);
+	//$to      = "teacherasscbytedev@yopmail.com";  
+	//$to      = "joe@accessibyte.com";  
+/*$to      = base64_decode($alldata['email']);  
+$subject = "Your Accessibyte Export Data is Ready";  
+
+$message = "
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <title>Your Export Data is Ready</title>
+</head>
+<body style='font-family: Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0;'>
+  <table width='100%' cellspacing='0' cellpadding='0' border='0' style='background-color:#f8f9fa; padding: 40px 0;'>
+    <tr>
+      <td align='center'>
+        <!-- Centered Card -->
+        <table width='600' cellspacing='0' cellpadding='0' border='0' 
+               style='background:#ffffff; border-radius: 8px; 
+                      box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+                      margin:0 auto; display:block;'>
+          <tr>
+            <td style='padding: 30px; text-align: center;'>
+              <h2 style='color:#333; margin:0 0 20px;'>Your Accessibyte Export Data is Ready 🎉</h2>
+              <p style='color:#555; font-size:15px; line-height:1.6;'>
+               
+                Your Accessibyte export data is ready.  
+                You can access it from your teacher dashboard.
+              </p>
+              <p style='margin: 30px 0;'>
+                <a href='https://dev.accessibyte.com/online/student/student-reports.php' 
+                   style='background-color:#007bff; color:#fff; text-decoration:none; padding:12px 24px; 
+                          border-radius:5px; font-size:16px; font-weight:bold; display:inline-block;'>
+                   Go To Export Data
+                </a>
+              </p>
+              <p style='color:#888; font-size:13px;'>
+                Thanks,<br>
+                The Accessibyte Team
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+";
+
+
+$from     = "no-reply@clone.accessibyte.com";
+$headers  = "From: Accessibyte <".$from.">\r\n";
+$headers .= "Reply-To: support@clone.accessibyte.com\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+
+	
+    if (mail($to, $subject, $message, $headers)) {
+		//echo "Mail with CSV sent!";
+			if((int)$alldata['is_teacher'] != 0 || $alldata['is_teacher'] != '0'){
+				$delete = "DELETE FROM export_queue WHERE user_id = '".$alldata['user']."' AND user_email = '".$alldata['email']."' AND csv_type = 'student_export' AND is_single = '".$alldata['is_teacher']."' ";
+			}else{
+			
+				$delete = "DELETE FROM export_queue WHERE user_id = '".$alldata['user']."' AND user_email = '".$alldata['email']."' AND csv_type = 'student_export' AND is_single = '0' ";
+				}
+			
+				mysqli_query($con, $delete);
+	
+			}*/
+		} 
+	}
+
+	/**/
+	}
+	 fclose( $f );
+	}
+
+?>

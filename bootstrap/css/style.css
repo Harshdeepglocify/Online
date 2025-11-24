@@ -1,0 +1,1614 @@
+.quick-ajax-response.small .alert .icon {
+
+  margin-right: 2px;
+
+}
+
+
+
+.quick-ajax-response.small .alert h4 {
+
+  font-size: 11px;
+
+}
+
+
+
+a {
+
+  color: #FF0066;
+
+}
+
+
+
+.box.box-solid.box-warning>.box-header {
+
+  background: #febf36;
+
+  background-color: #febf36;
+
+}
+
+
+
+.box.box-solid.box-warning {
+
+  border: 1px solid #ffffff;
+
+}
+
+
+
+.space-margin-bottom-25 {
+
+  margin-bottom: 25px;
+
+}
+
+
+
+.space-margin-bottom-50 {
+
+  margin-bottom: 50px;
+
+}
+
+
+
+.space-margin-bottom-100 {
+
+  margin-bottom: 100px;
+
+}
+
+
+
+.box-header-init {
+
+  color: #444;
+
+  display: block;
+
+  padding: 10px 0px;
+
+  position: relative;
+
+}
+
+
+
+.box-title {
+
+  display: inline-block;
+
+  font-size: 20px;
+
+  margin: 0;
+
+  line-height: 1;
+
+}
+
+
+
+.text-align-right-init {
+
+  text-align: right;
+
+}
+
+/* top header */
+
+.logo-lg .image img {
+
+  max-width: 178px;
+
+  height: 60px;
+
+  margin-top: 8px;
+
+}
+
+
+
+.navbar-static-top .logout-btn-main-init {
+
+  padding: 15px 5px 15px 5px
+
+}
+
+
+
+.skin-blue .main-header .navbar {
+
+  background-color: #ffffff;
+
+}
+
+
+
+.main-header .logo {
+
+  height: 74px;
+
+}
+
+/* Dashboard */
+
+
+
+.main-sidebar {
+
+  padding-top: 74px;
+
+}
+
+
+
+.custome-top-btn-init {
+
+  padding-right: 10px;
+
+}
+
+
+
+.custome-top-btn-init button {
+
+  margin-top: 4px;
+
+}
+
+
+
+.skin-blue .main-header .logo {
+
+  background-color: #ffffff;
+
+}
+
+
+
+.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a {
+
+  color: #ffffff;
+  background: #FF0066;
+
+}
+
+
+.skin-blue .sidebar-menu>li:focus>a, .skin-blue .sidebar-menu>li.active>a {
+
+  background: #FF0066;
+
+}
+
+
+
+.side-notification-init {
+
+  background: #ff865c;
+
+  padding: 0 !important;
+
+}
+
+
+
+.side-notification-init h4 {
+
+  text-align: center;
+
+  color: #fff;
+
+}
+
+
+
+.username-name-notification-init {
+
+  font-weight: 700;
+
+  padding-right: 5px;
+
+}
+
+
+
+.users-list-init>li {
+
+  width: 33%;
+
+}
+
+
+
+.users-list-init>li img {
+
+  border-radius: 0;
+
+}
+
+
+
+.users-list-active-init {
+
+  color: #00a65a;
+
+  font-size: 14px;
+
+}
+
+
+
+.users-list-expires-init {
+
+  color: #dd4b39;
+
+  font-size: 14px;
+
+}
+
+
+
+.users-list-no-license-init {
+
+  color: #999;
+
+  font-size: 14px;
+
+}
+
+
+
+/* side menu */
+
+.user-info-init .user-info-sub-name {
+
+  font-size: 20px;
+
+  color: #ffffff;
+
+  text-align: center;
+
+}
+
+
+
+.user-info-init .user-info-sub-rock {
+
+  font-size: 14px;
+
+  color: #ffffff;
+
+  text-align: center;
+
+}
+
+
+
+table#Quick_card_this_weeek th:first-child,
+
+table#Quickcards_general_report_display th:first-child {
+
+    width: 40% !important;
+
+}
+
+table#Quick_card_this_weeek th:nth-child(2),
+
+table#Quick_card_this_weeek th:nth-child(3),
+
+table#Quickcards_general_report_display th:nth-child(2),
+
+table#Quickcards_general_report_display th:nth-child(3){
+
+  width: 15% !important;
+
+}
+
+table#Quick_card_this_weeek th:nth-child(4),
+
+table#Quickcards_general_report_display th:nth-child(4){
+
+  width: 25% !important;
+
+}
+
+.user-info-init .user-info-sub-teacher {
+
+  font-size: 20px;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  border-bottom: 1px solid #fff;
+
+  margin-top: 25px;
+
+}
+
+
+
+.user-info-init .user-info-sub-code {
+
+  font-size: 16px;
+
+  color: #ffffff;
+
+  text-align: center;
+
+}
+
+
+
+.box-header.with-border {
+
+  color: black !important;
+
+}
+
+
+
+.box-header.with-border h3 {
+
+  font-weight: bold;
+
+}
+
+
+
+/* student Sidebar mneu */
+
+.students-info-init {
+
+  display: block;
+
+  margin: 10px auto 0;
+
+  text-align: center;
+
+}
+
+
+
+.students-info-init img {
+
+  max-width: 100px;
+
+  border-radius: 50%;
+
+  max-height: 100px;
+
+}
+
+
+
+.students-info-init h4 {
+
+  color: #fff;
+
+  font-weight: 700;
+
+}
+
+/* Student Dashboard - Updated 11-17-19 by Joe*/
+
+.student-title-main-init {
+
+  background: #fff;
+
+  padding: 2px 15px 10px 15px;
+
+}
+
+
+
+.student-title-main-init h3 {
+
+  display: inline-block;
+
+  padding-right: 15px;
+
+  color : #333;
+  font-size : 32px;
+  font-family:Roboto;
+  font-weight:600;
+
+}
+
+
+
+.chart-one-main-init {
+
+  display: block;
+
+  background: #fff;
+
+  margin-top: 15px;
+
+  padding: 15px 15px;
+
+}
+
+
+/* commented out 11/10/19 by joe
+.chart-one-main-init h3 {
+
+  margin: 0 0 15px;
+
+}
+*/
+
+
+.checkbox-init-custome {
+
+  margin: 0 auto;
+
+  text-align: center;
+
+}
+
+
+
+.checkbox-init-custome .checkbox {
+
+  display: inline-block;
+
+  margin-right: 10px;
+
+}
+
+
+
+.action-btn-chart-init {
+
+  text-align: right;
+
+}
+
+
+
+.action-btn-chart-init .dropdown-menu {
+
+  right: 0;
+
+  left: auto;
+
+}
+
+
+
+.chart-two-main-init {
+
+  display: block;
+
+  background: #fff;
+
+  margin-top: 15px;
+
+  padding: 15px 15px;
+
+}
+
+
+
+.chart-title-header-img {
+
+  text-align: center;
+
+  padding: 30px 0px;
+
+}
+
+
+
+.chart-title-header-img img {
+
+  max-width: 200px;
+
+  margin: 0 auto;
+
+  width: auto;
+
+}
+
+
+
+.chart-title-header-img p {
+
+  text-align: center;
+
+  font-size: 16px;
+
+}
+
+
+
+/* Student page */
+
+.student-timeline-init {
+
+  list-style: none;
+
+  text-align: center;
+
+  padding: 0;
+
+  margin: 0;
+
+}
+
+
+
+.student-timeline-init .odd-timeline-init {
+
+  display: block;
+
+}
+
+
+
+.student-timeline-init .even-timeline-init {
+
+  display: block;
+
+  background: #f1f1f1;
+
+  padding: 10px;
+
+}
+
+
+
+.student-timeline-init .odd-timeline-init-i {
+
+  padding: 30px 0px;
+
+  position: relative;
+
+}
+
+
+
+.odd-timeline-init-i:after {
+
+  content: '';
+
+  height: 100%;
+
+  width: 1px;
+
+  background: #cecece;
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  margin: 0 auto;
+
+}
+
+
+
+.student-timeline-init .odd-timeline-init-i i {
+
+  padding: 10px;
+
+  border-radius: 50%;
+
+  font-size: 19px;
+
+  color: #fff;
+
+  line-height: 19px;
+
+  position: relative;
+
+  z-index: 99;
+
+}
+
+
+
+.student-timeline-init .odd-timeline-init-i i.one {
+
+  background: #67deef;
+
+}
+
+
+
+.student-timeline-init .odd-timeline-init-i i.two {
+
+  background: #ac92ec;
+
+}
+
+
+
+.student-timeline-init .odd-timeline-init-i i.three {
+
+  background: #ed5565;
+
+}
+
+
+
+.even-time-text-title {
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #868686;
+
+  margin-bottom: 2px;
+
+}
+
+
+
+.even-time-text-sub {
+
+  margin: 0;
+
+  font-size: 14px;
+
+}
+
+
+
+.center-mainclass-init {
+
+  list-style: none;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-bottom: 1px solid gainsboro;
+
+}
+
+
+
+.std-box-shadow-remover {
+
+  box-shadow: none !important;
+
+  border-top: none !important;
+
+}
+
+
+
+.custom-box-title-init {
+
+  border: 1px solid #e0e0e0;
+
+  min-height: 180px;
+
+}
+
+
+
+.renew-link-init {
+
+  text-decoration: underline;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #000;
+
+}
+
+
+
+.has-error .form-control-feedback {
+
+  color: #ff0066;
+
+}
+
+
+
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
+
+  color: #ff0066;
+
+}
+
+
+
+.help-block {
+
+  color: #737373;
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  margin-top: 5px;
+
+}
+
+/* login */
+
+.login-page .accessibyte-logo {
+
+  height: auto !important;
+
+/*  width: 100% !important; */
+
+  max-width: 358px !important;
+
+  margin: 0 auto !important;
+
+}
+
+
+
+.alert-success h4 {
+
+  margin: 0;
+
+}
+
+
+
+#TypioDateFilterBtn {
+
+  font-size: 16px;
+  font-family: 'Poppins';
+  
+}
+
+/* my account start */
+
+.student-add-custom .student-custimize-text {
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.student-add-custom a.dashboard-settings-btn.btn-block {
+    font-size: 16px;
+}
+.student-add-custom a.dashboard-settings-btn.btn-block i{
+    margin-right: 5px;
+}
+.student-add-custom .col-md-2 h3 {
+    padding-right: 0 !important;
+}
+
+.my-account-main-init {
+    background: #ffffff;
+    margin-top: 15px;
+    padding: 15px 15px 15px 40px;
+}
+.my-account-main-init .with-border h3.box-title {
+    font-size: 30px;
+    margin-bottom: 0;
+    line-height: normal;
+}
+.my-account-main-init .with-border h3.box-title b {
+    font-weight: 600;
+}
+.my-account-main-init .with-border h3.user-info-sub-rock {
+    margin: 0 0 30px;
+    font-size: 30px;
+}
+.my-account-main-init .account-lbl {
+    margin-bottom: 20px;
+}
+.my-account-main-init .account-lbl h3 {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-weight: 600;
+}
+.my-account-main-init .account-lbl:nth-child(3) h3 {
+    font-weight: 500;
+}
+.my-account-main-init .account-lbl p {
+    margin: 0;
+    font-size: 15px;
+}
+.my-account-main-init .account-lbl.account-btn {
+    margin-top: 50px;
+}
+.my-account-main-init .account-lbl.account-btn form#update_license_frm input {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.my-account-main-init .account-lbl.account-btn form#update_license_frm h3 {
+    margin-bottom: 10px;
+}
+@media screen and (max-width:991px) and (min-width:768px){
+    .my-account-main-init .account-lbl.account-btn form#update_license_frm {
+        width: 61%;
+    }
+}
+@media screen and (max-width:767px){
+    .my-account-main-init {
+        padding: 15px;
+    }
+}
+/* my account end */
+
+
+@media only screen and (max-width: 992px) {
+
+	/* Student page */
+
+  .center-mainclass-init {
+
+    display: block;
+
+    text-align: center;
+
+  }
+
+
+
+  .text-area-center-init {
+
+    padding-bottom: 15px;
+
+  }
+
+}
+
+
+
+@media screen and (min-width:768px) {
+
+  .main-header .sidebar-toggle {
+
+    display: none;
+
+  }
+
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+	/* menu */
+
+  .main-header .logo {
+
+    position: absolute;
+
+    top: 0;
+
+    z-index: 9;
+
+  }
+
+
+
+  .main-header .logo .logo-lg {
+
+    display: inline-block;
+
+  }
+
+
+
+  .skin-blue .main-header .logo {
+
+    display: inline-block;
+
+  }
+
+
+
+  .main-header .sidebar-toggle {
+
+    padding: 27px 15px;
+
+  }
+
+
+
+  .skin-blue .main-header .navbar .sidebar-toggle {
+
+    color: #00c0ef;
+
+  }
+
+
+
+  .skin-blue .main-header .navbar {
+
+    background-color: rgba(255, 255, 255, 0);
+
+  }
+
+
+
+  .skin-blue .main-header .navbar .sidebar-toggle:hover {
+
+    background-color: #00c0ef;
+
+  }
+
+}
+
+
+
+@media only screen and (max-width: 400px) {
+
+  .logo-lg .image img {
+
+    max-width: 108px;
+
+  }
+
+}
+
+
+
+.btn-accessbyte {
+
+  background: #FF0080;
+
+  border: #FF0080;
+
+  color: #FFFFFF;
+
+}
+
+
+
+.btn-pink {
+
+  width: auto;
+
+  margin: 0 auto;
+
+  font-weight: bold;
+
+  height: 35px;
+
+  line-height: 22px;
+
+  display: inline-block;
+
+  margin-bottom: 3px;
+
+}
+
+
+
+#registartion {
+
+  margin-top: 25px;
+
+	/*display: none;*/
+
+}
+
+
+
+.input_box {
+
+  margin-bottom: 30px;
+
+}
+
+
+
+.content-wrapper, .right-side {
+
+  background-color: #d9dde3;
+
+}
+
+/*#TypioHistory_table,*/
+#Quickcards_general_report_display,
+#Quick_card_this_weeek,
+#typio-custom-lessons,
+#typio_this_week,
+#typio-custom-lessons_new,
+#students_decks_tbl,
+#notepad_doc_listing,
+#students_test_tbl,
+#to_do_doc_listing,
+#reader_doc_listing,
+#hangman-table,
+#game-table,
+#qc-cards-list-tbl {
+    height: 250px;
+    overflow-y: auto;
+    width: 100%;
+    display: block;
+}
+table#share-table {
+    height: 220px !important;
+    width: 100%;
+    /* overflow-y: auto; */
+    width: 100%;
+   /* display: flex;*/
+}
+table.share-table-arcade {
+    height: 230px !important;
+    width: 100%;
+    overflow-y: auto;
+    width: 100%;
+    /*display: flex;*/
+}
+table#share-table tbody {
+    width: 100%;
+    display: block;
+}
+table#share-table tbody tr {
+    width: 100%;
+    display: block;
+    border: 0;
+    border-bottom: 1px solid #f4f4f4;
+}
+table#share-table tbody tr td{
+    width: 100%;
+    display: block;
+    border: 0;
+}
+
+.add-more-one-line-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+.export-test-div.col-md-8.col-sm-8 {
+    padding-left: 0;
+}
+.add-more-one-line-wrap button {
+    width: 50%;
+    margin-top: 0 !important;
+    margin-right: 15px;
+}
+.add-more-one-line-wrap button#add-more-question {
+    margin-right: 0;
+}
+table#share-table tbody tr td input {
+    margin-right: 10px;
+}
+#TypioHistory_table tbody tr th,#Quickcards_general_report_display tbody tr th,#Quick_card_this_weeek tbody tr th,#typio_this_week tbody tr th,#typio-custom-lessons tbody tr th,#reader_doc_listing tbody tr th,#students_decks_tbl tbody tr th,#game-table tbody tr th,#hangman-table tbody tr th,#to_do_doc_listing tbody tr th,#students_test_tbl tbody tr th,#notepad_doc_listing tbody tr th,#qc-cards-list-tbl tbody tr th {
+
+  width: 100% !important;
+
+}
+
+
+.wt-cus-dvider {
+
+  background: #d9dde3;
+
+  height: 30px;
+
+  width: calc(100% + 20px);
+
+  margin-left: -10px;
+
+}
+
+
+
+.color,#deck-maker-modal .modal-title {
+
+  color: #313135;
+
+}
+
+
+
+.text_deck {
+
+  color: #000000;
+
+}
+
+
+
+.create_new_deck {
+
+  margin-top: 15px;
+
+  float: right;
+
+}
+
+
+
+#typio-custom-lessons_new tbody tr th:nth-child(2) {
+
+  width: 100% !important;
+
+}
+
+
+
+#remove_data {
+
+  float: right;
+
+}
+
+
+
+#edit_question_remove {
+
+  float: right;
+
+}
+
+
+
+#edit_side_box_remove {
+
+  float: right;
+
+}
+
+
+
+#edit_question_answer_remove {
+
+  float: right;
+
+}
+
+
+
+.edit_remove_btn {
+
+  background: none;
+
+  border: none;
+
+  float: right;
+
+}
+
+
+
+
+
+/*----- Start 15-12-2018 -----*/
+
+div#append_data_for_test div {
+
+  display: inline-block;
+
+  width: 100%;
+
+  margin: 0;
+
+}
+
+
+
+div#append_data_for_test div h3 + div {
+
+  margin-left: 0 !important;
+
+}
+
+
+
+div#append_data_for_test div h3 + div span.text_deck {
+
+  margin: 0 5px;
+
+}
+
+
+
+section.edit_question_row {
+
+  display: inline-block;
+
+  width: 100%;
+
+}
+
+
+
+div#append_data_edit > div {
+
+  margin-top: 10px;
+
+  display: inline-block;
+
+  width: 100%;
+
+}
+
+
+
+div#append_data_for_test .test_maker_answer .answer-title.color {
+
+  width: 25px;
+
+  float: left;
+
+}
+
+
+
+span.colored-star {
+
+  color: #ff0066;
+
+  width: 10px;
+
+  float: left;
+
+}
+
+
+
+div#append_data_for_test div h3 + div span.text_deck {
+
+  font-size: 17px;
+
+  line-height: normal;
+
+  margin: 5px 0 0;
+
+  width: calc(100% - 25px);
+
+  float: left;
+
+}
+
+/*----- End 15-12-2018 -----*/
+
+select[multiple], select[size] {
+
+  height: 225px !important;
+
+}
+
+/*.chart-one-main-init .box-title {
+
+    font-weight: 600;
+
+    font-size: 22px;
+
+    color: #ff0066;
+
+}*/
+
+#append_data h3 {
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  margin-top: 6px;
+
+}
+
+
+
+#append_data h3 .text_deck {
+
+  font-weight: normal;
+
+}
+
+
+
+@media screen and (max-width:991px) {
+
+  .modal-footer div[style="margin-bottom: 10px"] {
+
+    margin: 0 !important;
+
+  }
+
+
+
+  button.btn.btn-success.add-student-deck-btn {
+
+    margin: -1px 15px;
+
+  }
+
+  .modal-footer button.btn.btn-success.edit-students-test-save,
+
+  .modal-footer button#add-student-test-btn{
+
+    margin: 15px 10px;
+
+  }
+
+  #edit-deck-maker-modal .modal-footer button.btn.btn-success.edit-modal-save{
+
+    margin: 0px 10px;
+
+  }
+
+}
+
+
+
+@media screen and (max-width:767px) {
+
+  .desk_maker_label {
+
+    width: 20% !important;
+
+  }
+
+
+
+  .desk_maker_input_1 {
+
+    width: 72% !important;
+
+  }
+
+
+
+  .modal-footer div[style="margin-bottom: 10px"] {
+
+    margin: 0 !important;
+
+  }
+
+}
+
+@media screen and (min-width:561px) and (max-width:767px){
+
+  .modal-footer button.btn.btn-success.edit-students-test-save,
+
+  .modal-footer button#add-student-test-btn{
+
+    margin: 15px 10px;
+
+  }
+
+  #edit-deck-maker-modal .modal-footer button.btn.btn-success.edit-modal-save{
+
+    margin: 0px 10px;
+
+  }
+
+}
+
+@media screen and (min-width: 320px) and (max-width:560px) {
+
+ button#add-more-answer_edit,
+
+ button#add-more-question_edit,
+
+ button#add-more-answer,
+
+ button#add-more-question,
+
+ button#add-student-test-btn,
+
+ button#add-more-side_fields,
+
+ .add-student-deck-btn {
+
+    width: 100%;
+
+    margin-bottom: 15px;
+
+    margin-left: 0;
+
+  }
+
+  button#add-student-test-btn,
+
+  .add-student-deck-btn{
+
+      margin:0 !important;
+
+  }
+
+  .modal-footer #edit_deck_footer button#add-more-side_fields_edit {
+
+    width: 100%;
+
+    margin-bottom: 5px;
+
+  }
+
+  .modal-footer button.btn.btn-success.edit-students-test-save {
+
+    width: 100%;
+
+    margin:0;
+
+  }
+
+  #edit-deck-maker-modal .modal-footer button.btn.btn-success.edit-modal-save{
+
+    width: 100%;
+
+    margin:0;
+
+  }
+
+
+
+}
+
+
+.today-main-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f4f4f4;
+    padding-bottom: 15px;
+    gap: 30px;
+}
+.today-main-wrap .column-wrap {
+    /*width: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;*/
+}
+.today-main-wrap .column-wrap p {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.today-main-wrap .column-wrap h3 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: Arial;
+}
+.today-main-wrap .column-wrap.today-column-wrap h3 {
+    color: #6c5ce7;
+}
+.today-main-wrap .column-wrap h3 {
+    color: #ff0066;
+}
+button.dashboard-settings-btn.btn-block.typio-export-modal {
+    margin-bottom: 15px;
+}
+.box.box-solid.box-warning .week-activity{
+    background: #55efc4 !important;
+    background-color: #55efc4 !important;
+}
+.box.box-solid.box-warning .no-week-activity{
+    background: #ffcd62 !important;
+    background-color: #ffcd62 !important;
+}
+.registerCheck {
+    position: relative;
+    text-align: center;
+    padding-top: 15px;
+    display: inline-block;
+}
+.registerCheck input {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    height: 22px;
+}
+.registerCheck label {
+    padding-left: 35px;
+}
+.registerCheck label:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 17px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #333;
+        color: black;
+}
+.registerCheck label:hover:after,
+.registerCheck input:hover ~ label:after,
+.registerCheck input.focus ~ label:after{
+    outline: 3px solid #f06;
+}
+.registerCheck input:checked ~ label:hover:after{
+    outline: 0;
+}
+
+.registerCheck input:checked ~ label:after {
+    color:black!important;
+    background: white;
+}
+.registerCheck input:checked ~ label:before{
+    opacity: 1;
+}
+.registerCheck label:before {
+    content: "\f00c";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    position: absolute;
+    left: 5px;
+    z-index: 9;
+    top: 21px;
+    font-size: 13px;
+    opacity: 0;
+}
+.registerCheck label .accessibyte-link {
+    position: relative;
+    z-index: 999;
+}
+.box-footer.box-comments.border-0 {
+    border: 0;
+}
+.min-height-wrap{
+    min-height: 310px;
+}
+.lessons_complete_list_noprint .box-body.table-responsive.no-padding {
+    overflow-y: auto !important;
+}
+input#select_all_students {
+    margin-right: 25px;
+}
+input#select_admin_all_students {
+    margin-right: 25px !important;
+}
+p.text-center.typio_lesson_cst_cls {
+    font-size: 20px;
+    margin: 10px 0px;
+}
+p.text-left.braillio_lesson_cst_cls {
+    font-size: 20px;
+    margin: 10px 0px;
+}
+b#typio_wpm_cst {
+    font-size: 29px;font-weight: 800!important;font-family: 'Poppins'!important;;
+}
+b#typio_acc_cst {
+    font-size: 29px;font-weight: 800!important;font-family: 'Poppins'!important;;
+	
+}
+b#typio_err_cst {
+    font-size: 29px;font-weight: 800!important;font-family: 'Poppins'!important;;
+}
+#braillio_wpm_cst{
+    font-size: 20px;font-weight: 800!important;font-family: 'Poppins'!important;;
+}
+#braillio_acc_cst {
+    font-size: 20px;font-weight: 800!important;font-family: 'Poppins'!important;;
+	
+}
+#braillio_err_cst {
+    font-size: 20px;font-weight: 800!important;font-family: 'Poppins'!important;;
+}
+
+b#typiokp_wpm_cst{
+    font-size: 20px;
+}
+b#typiokp_acc_cst {
+    font-size: 20px;
+}
+b#typiokp_err_cst {
+    font-size: 20px;
+}
+
